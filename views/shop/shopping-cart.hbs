@@ -1,0 +1,129 @@
+{{# if products}}
+<!-- ========================= SECTION CONTENT ========================= -->
+<section class="section-content bg padding-y border-top">
+    <div class="container">
+
+    <div class="row">
+        <main class="col-sm-9">
+
+    <div class="card">
+    <table class="table table-hover shopping-cart-wrap">
+    <thead class="text-muted">
+    <tr>
+    <th scope="col">Product</th>
+    <th scope="col" width="120">Quantity</th>
+    <th scope="col" width="120">Price</th>
+    <th scope="col" class="text-right" width="200">Action</th>
+    </tr>
+    </thead>
+    <tbody>
+        {{# each products}}
+        <tr>
+            <td>
+        <figure class="media">
+            <div class="img-wrap"><img src="{{this.item.imagePath}} " class="img-thumbnail img-sm"></div>
+            <figcaption class="media-body">
+                <h6 class="title text-truncate">{{this.item.title}}</h6>
+                <dl class="dlist-inline small">
+                <dt>{{this.item.amount}}</dt>
+                <dd>{{this.item.unit}}</dd>
+                </dl>
+            </figcaption>
+        </figure> 
+            </td>
+            <td> 
+                 <h4>
+              <a href="/reduce/{{this.item._id}}"><i class="text-danger fa fa-minus-square"></i> </a> 
+             <span class="badge badge-dark"> {{this.qty}} </span>
+               <a href="/add-to-cart/{{this.item._id}}" class="fa fa-plus-square"></a></h4>
+            </td>
+            <td> 
+                <div class="price-wrap"> 
+                    <var class="price"><small>$</small> {{this.price}}<small> USD</small> </var> 
+                    <small class="text-muted">( ${{this.item.price}} USD each)</small> 
+                </div> <!-- price-wrap .// -->
+            </td>
+            <td class="text-right"> 
+            <a href="/remove/{{this.item._id}}" class="btn btn-outline-danger"> × Remove</a>
+            </td>
+        </tr>
+    {{/each}}
+    </tbody>
+    </table>
+    </div> <!-- card.// -->
+
+        </main> <!-- col.// -->
+        <aside class="col-sm-3">
+    <p class="alert alert-success"> FREE Shipping for orders over $99.9 USD</p>
+    <dl class="dlist-align">
+    
+    <dt>Total:</dt>
+    <dd class="text-right">$<strong class="lead">{{this.totalPrice}} </strong> <small >USD</small></dd>
+    </dl>
+    <hr>
+    <img src="/images/creditcards.png" class="img-fluid">
+    <hr>
+    <figure class="itemside mb-3 text-center">
+        
+        <form action="/charge/" method="POST">
+        <input type="text" hidden name="priz" value="{{this.totalPrice}}00">
+        <input type="hidden" name="orderItems" value='{{# each products}}
+                        <li class="list-group-item">
+                            <span class="badge">{{this.qty}}</span>
+                            <strong style="margin-right:20px;"> {{this.item.title}} </strong>
+                            <span style="margin-right:20px;" class="label label-success">
+                                $ {{this.price}}
+                            </span>
+                            <span style="margin-right:20px;" class="label label-primary">{{this.amt}}
+                                <sup>
+                                    <small>{{this.item.unit}}</small>
+                                </sup>
+                            </span> </li> {{/each}}'>
+
+         <input type="hidden" name="orderItem" value='{{# each products}}
+                       {{this.qty}} {{this.amt}}/{{this.item.unit}} of {{this.item.title}}{{/each}}'>
+            <script
+                src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                class="strip-button"
+                data-key="{{stripePublishableKey}}"
+                data-amount="{{this.totalPrice}}00"
+                data-name="QQmedics"
+                data-zip-code="true"
+                data-description="Medicate"
+                data-image="/images/logo.png"
+                data-locale="auto"
+                data-allow-remember-me="true">
+            </script>
+            <script>
+                document.getElementsByClassName('stripe-button-el')[0]
+                .style.display = 'none';
+            </script>
+            <button class="btn btn-primary btn-block"> Place Order </button>
+        </form>
+
+
+    </figure>
+    
+
+        </aside> <!-- col.// -->
+    </div>
+
+    </div> <!-- container .//  -->
+</section>
+<!-- ========================= SECTION CONTENT END// ========================= -->
+
+
+
+
+{{else}}
+
+
+<div class="row">
+    <div class="text-center">
+       <h2>No Items in Cart <i class="fa fa-shopping-cart fa-2x"></i></h2>
+    </div>
+</div>
+<br><br><br><br><br><br><br><br>
+{{/if}}
+
+

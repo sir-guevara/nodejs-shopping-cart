@@ -1,0 +1,37 @@
+<div class="container">
+
+    <section class="py-5 center col-md-5">
+        <div class="card py-3">
+                <h4 class="lead text-center">Enter Delivery Address</h4>
+            <article class="card-body">
+                <form action="/order/" method="POST" class="mx-auto">
+                    <h5 class="text-muted lead text-center">We'll never share your details with anyone else.</h5>
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" name="name" class="form-control" required>
+                    </div> <!-- form-group end.// -->
+                    <div class="form-group">
+                        <label>Phone</label>
+                        <input type="text" name="phone" class="form-control" placeholder="optional">
+                    </div> <!-- form-group end.// -->
+                    <div class="form-group">
+                    <div class="form-group">
+                        <label>Address</label>
+                        <input type="text" name="address" class="form-control" required>
+                        </div> <!-- form-group end.// -->
+                    <div class="form-group">
+                        <label>message</label>
+                        <textarea name="message" class="form-control"placeholder="optional"> Optional</textarea>
+                    </div> <!-- form-group end.// -->  
+
+
+                    <input type="hidden" name="orderItems" value="{{orderItems}}">
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-block"> Order  </button>
+                    </div> <!-- form-group// -->                                             
+            </form>
+        </article>
+        </div>
+    </section>
+</div>
+    

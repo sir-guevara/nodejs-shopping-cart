@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="row">
+        <form  action="/add-product" method="post" enctype="multipart/form-data">
+<div class="form-group">
+    <label for="type">Type</label>
+    <select required name="type" id="type" class="form-control">
+        <option value="lsd"> LSD </option>
+        <option value="dmt"> DMT </option>
+        <option value="marijuana"> Marijuana </option>
+        <option value="shrooms"> Shrooms </option>
+        <option value="pills"> Pills </option>
+    </select>
+  </div>
+    <input required type="text" name="title" class="form-control" placeholder="Super Lemon Haze" ><br>
+    <input required type="text" name="summary" class="form-control" placeholder="summary" >
+    <br>
+        <input rquired type="file" name="image" class="form-control-file" >
+    <br> 
+    <input required type="text" name="amount" class="form-control" placeholder="Amount "><br>
+    <input required type="text" name="unit" class="form-control"placeholder="unit" > <br>
+    <textarea name="description" class="form-control" placeholder="Description (optional)" ></textarea><br>
+    <input required type="text" name="price" class="form-control" placeholder="150" ><br>
+
+  
+    <button class="btn btn-primary btn-block">upload</button>
+</form>
+    </div>
+</div>
+
+<br>

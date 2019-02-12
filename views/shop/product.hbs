@@ -1,0 +1,38 @@
+<div class="conatiner">
+	
+        	<div id="code_prod_detail">
+				<div class="card">
+					<div class="row no-gutters">
+						<aside class="col-sm-5 border-right">
+				<article class="gallery-wrap"> 
+				<div class="img-big-wrap">
+				<div> <img src="/{{item.imagePath}}"></div>
+				</div> <!-- slider-product.// -->
+
+				</article> <!-- gallery-wrap .end// -->
+						</aside>
+						<aside class="col-sm-7">
+				<article class="p-5">
+					<h3 class="title mb-3">{{item.title}}</h3>
+
+				<div class="mb-3"> 
+					<var class="price h3 text-warning"> 
+						<span class="currency">US $</span><span class="num"> {{item.price}} </span>
+					</var> 
+					<span>/{{# if item.amount}}<small class="small">{{item.amount}}</small>{{/if}}
+						{{# if item.unit}} <small class="small"><sub>{{item.unit}}</sub>{{/if}}</small></span> 
+				</div> <!-- price-detail-wrap .// -->
+				<dl>
+					<h4>{{item.summary}}</h4>
+				<dt>Description</dt>
+				<dd><p>{{item.description}}</p></dd>
+				</dl>
+					<hr>
+					<a href="/add-to-cart/{{item.id}}" class="btn btn-lg btn-primary"> <i class="fas fa-shopping-cart"></i> Add to cart </a>
+				</article> <!-- card-body.// -->
+						</aside> <!-- col.// -->
+					</div> <!-- row.// -->
+				</div> <!-- card.// -->
+				</div>
+
+  </div>    

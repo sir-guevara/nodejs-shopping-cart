@@ -1,0 +1,99 @@
+<header class="section-header navbar-landing bg-white">
+<section class="header-main shadow-sm ">
+	<div class="container">
+<div class="row align-items-center">
+	<div class="col-lg-2 col-sm-8">
+	<a href="/" class="brand-wrap">
+		<img class="logo" src="/images/logo.png">
+		<h2 class="logo-text">QQmedics.</h2>
+	</a> <!-- brand-wrap.// -->
+	</div>
+	<div class="col-lg-8 col-sm-8" id="menu">
+		<a href="/products/pills/" class="widget-header">
+				<div class="icontext">
+					<div class="icon-wrap"><i class="fa fa-pills icon-sm round border"></i></div>
+					<div class="text-wrap">
+						<small>Pills</small>
+						<div>Pills</div>
+					</div>
+				</div>
+			</a>
+			<a href="/products/lsd/" class="widget-header">
+				<div class="icontext">
+					<div class="icon-wrap"><img src="/images/office-material.png"  class="img-fluid icon-sm round border" alt=""></div>
+					<div class="text-wrap">
+						<small>Lysergic Acid Diethylamide</small>
+						<div>LSD</div>
+					</div>
+				</div>
+			</a>
+            <a href="/products/cannabis/" class="widget-header mr-3">
+				<div class="icontext">
+					<div class="icon-wrap"><i class="text-success icon-sm round border fas fa-cannabis"></i></div>
+					<div class="text-wrap">
+						<small>Cannabis</small>
+						<div>Weed</div>
+					</div>
+				</div>
+			</a>
+            <a href="/products/shrooms/" class="widget-header mr-3">
+				<div class="icontext">
+					<div class="icon-wrap"><img src="/images/mushroom.png" class="icon-sm img-fluid round border" alt=""></div>
+					<div class="text-wrap">
+						<small>Magic Mushroom</small>
+						<div>Shrooms</div>
+					</div>
+				</div>
+			</a>
+				
+            <a href="/products/dmt/" class="widget-header mr-3">
+				<div class="icontext">
+					<div class="icon-wrap"><img src="/images/dust.png"  class="img-fluid round icon-sm border" alt=""></div>
+					<div class="text-wrap">
+						<small>N,N-Dimethyltryptamine</small>
+						<div>Dmt</div>
+					</div>
+				</div>
+			</a>
+	</div> <!-- col.// -->
+	<div class="col-lg-2 col-xl-2 col-sm-4">
+		<div class="widgets-wrap float-right">
+			<a href="/shopping-cart" class="widget-header mr-3">
+				<div class="icontext">
+					<div class="icon-wrap"><i class="icon-sm round border fa fa-shopping-cart"></i></div>
+					<div class="text-wrap">
+						<span class="small badge badge-danger">
+							{{# if session.cart}} 
+								{{session.cart.totalQty}}
+								{{else}}0{{/if}}</span>
+						<div>Cart</div>
+					</div>
+				</div>
+			</a>
+
+		</div> <!-- widgets-wrap.// -->
+	</div> <!-- col.// -->
+
+</div> <!-- row.// -->
+	</div> <!-- container.// -->
+</section> <!-- header-main .// -->
+</header> <!-- section-header.// -->
+<div class="container">
+
+		
+
+
+	{{# if hasErrors}}
+<div class="text-center alert alert-{{type}}">
+    {{# each messages }}
+
+				<div class="alert alert-{{type}} alert-dismissible fade show" role="alert">
+			<strong>{{this}}
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+	</div>
+    {{/each}}
+    </div>
+  {{/if}}
+</div>

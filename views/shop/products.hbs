@@ -1,0 +1,48 @@
+<!-- ========================= SECTION CONTENT ========================= -->
+<section class="section-content padding-y bg">
+<div class="container">
+	
+<div class="card mb-3">
+	<div class="card-body">
+
+<header class="section-heading">
+<h3 class="title-section" style="text-transform:uppercase">{{title}}</h3>
+</header>
+
+<article>
+	<div id="code_prod2">
+<div class="row">
+
+{{# each products}}
+	<div class="col-md-3">
+	<figure class="card card-product">
+		<div class="img-wrap"> 
+			<img src="/{{this.imagePath}}">
+			<a class="btn-overlay text-white" href="/product/{{this.id}}/"><i class="fa fa-search-plus class="text-white""></i> view</a>
+		</div>
+		<figcaption class="info-wrap">
+			<h4 class="lead text-center"><a href="/product/{{this.id}}/" class="title">{{this.title}}</a></h4>
+			<div class="action-wrap">
+				<a href="/add-to-cart/{{this.id}}" class="btn btn-primary btn-sm float-right"><i class="fa fa-plus"></i> <i class="fa fa-shopping-cart"> </i> add to cart </a>
+				<div class="price-wrap h5">
+					<span class="price-new">${{this.price}}</span> 
+					{{# if this.amount}}<small class="small">{{this.amount}}</small>{{/if}}
+					{{# if this.unit}} <small class="small"><sub>{{this.unit}}</sub>{{/if}}</small>
+
+
+					{{!-- <del class="price-old">$1980</del> --}}
+				</div> <!-- price-wrap.// -->
+			</div> <!-- action-wrap -->
+		</figcaption>
+	</figure> <!-- card // -->
+</div> <!-- col // -->
+{{/each}}
+</div> <!-- row.// -->
+</div>
+
+
+</article>
+	</div> <!-- card-body .// -->
+</div> <!-- card.// -->
+</div>
+</section>
